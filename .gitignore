@@ -1,0 +1,18 @@
+# 生成器输出（可随时重新生成，不入库）
+/IGBT_Turnover_Dashboard.xlsx
+/IBGT看板生成器.exe
+/dashboard_HR.zip
+/dashboard_HR.zip.part*
+/dashboard_HR/
+/build/
+/dist/
+*.spec
+__pycache__/
+~$*
+
+# 本机其它无关文件
+/IBGT Profile.xlsx
+/make_dashboard.py
+/销售看板.xlsx
+/给收件人的说明.txt
+/合并看板包.cmd
