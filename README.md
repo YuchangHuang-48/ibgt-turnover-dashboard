@@ -22,7 +22,23 @@ python make_hr_dashboard.py        # 或双击 run_dashboard.bat
 
 **方式 B · 无 Python 环境**
 
-从 [Releases](../../releases) 下载 `IGBT看板生成器.exe`，双击即可（首次运行可能触发 SmartScreen，选择"仍要运行"）。
+从 [Releases](../../releases) 下载 `IBGT-dashboard-generator.exe`，双击即可（首次运行可能触发 SmartScreen，选择"仍要运行"）。
+
+**方式 C · 无法下载？在 GitHub 网页上直接复制代码**
+
+目标电脑无法从 GitHub 下载文件时，纯复制也能完成部署：
+
+1. 准备一个代码编辑器（VS Code / Notepad++ 均可，记事本亦可）
+2. 依次打开以下 2 个文件，点击右上角 **"Copy raw contents"** 按钮（或进入 Raw 页面全选复制）：
+   - [`make_hr_dashboard_standalone.py`](make_hr_dashboard_standalone.py) —— 单文件版生成器（样式模块已内联）
+   - [`run_dashboard.bat`](run_dashboard.bat) —— 双击运行入口（可选）
+3. 粘贴到记事本，**另存为同名文件**；`.bat` 文件保存时"保存类型"选 **所有文件**，避免变成 `.txt`
+4. 安装依赖并运行：
+
+```bash
+pip install openpyxl
+python make_hr_dashboard_standalone.py
+```
 
 运行后生成两个文件：
 
@@ -38,11 +54,13 @@ python make_hr_dashboard.py        # 或双击 run_dashboard.bat
 ## 文件结构
 
 ```text
-├── make_hr_dashboard.py        # 生成器主程序
-├── base.py                     # 样式令牌（与主程序同目录放置）
-├── run_dashboard.bat           # Windows 双击运行入口
-├── IGBT人员流动指标计算依据.md   # 各指标的计算口径文档
-└── IGBT_Turnover_Dashboard_Demo.xlsx   # 演示数据成品（示例输出）
+├── make_hr_dashboard.py              # 生成器主程序（双文件版）
+├── make_hr_dashboard_standalone.py   # 单文件版生成器（样式模块已内联，便于网页复制）
+├── base.py                           # 样式令牌（双文件版需与主程序同目录放置）
+├── run_dashboard.bat                 # Windows 双击运行入口
+├── requirements.txt                  # Python 依赖
+├── IGBT人员流动指标计算依据.md         # 各指标的计算口径文档
+└── IGBT_Turnover_Dashboard_Demo.xlsx # 演示数据成品（示例输出）
 ```
 
 ## 指标口径
